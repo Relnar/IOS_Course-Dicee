@@ -33,6 +33,16 @@ class ViewController: UIViewController
     pickDices()
   }
 
+  override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?)
+  {
+    super.motionEnded(motion, with: event)
+    
+    if motion == .motionShake
+    {
+      pickDices()
+    }
+  }
+
   private func pickDices()
   {
     let dice1 = Int.random(in: 0..<diceImages.count)
